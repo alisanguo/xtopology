@@ -42,7 +42,6 @@
     "webpack": "^4.43.0"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [

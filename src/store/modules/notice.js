@@ -17,9 +17,12 @@ export default {
 }
 
 
-   // "topology-activity-diagram": "0.0.6",
-    // "topology-chart-diagram": "0.0.3",
-    // "topology-class-diagram": "0.0.4",
-    // "topology-core": "^0.2.15",
-    // "topology-flow-diagram": "0.0.3",
-    // "topology-sequence-diagram": "0.0.6",
+
+
+    // "@topology/core": "^0.2.19",
+    // "@topology/activity-diagram": "^0.2.17",
+    // "@topology/class-diagram": "^0.2.17",
+    // "@topology/flow-diagram": "^0.2.17",
+    // "@topology/sequence-diagram": "^0.2.17",
+    // "@topology/chart-diagram": "^0.2.17",
+    // "@topology/layout": "^0.2.17",
