@@ -19,6 +19,6 @@ export default {
   destroyed() {}
 }
 </script>
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 //@import url(); 引入公共css类
 </style>

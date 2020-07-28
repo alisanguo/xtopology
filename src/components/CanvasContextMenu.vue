@@ -1,10 +1,14 @@
 <template>
   <div class="menus">
     <div>
-      <a :class="{disabled:!props.node && !props.nodes}" @click="onTop()">置顶</a>
+      <a :class="{ disabled: !props.node && !props.nodes }" @click="onTop()"
+        >置顶</a
+      >
     </div>
     <div>
-      <a :class="{disabled:!props.node && !props.nodes}" @click="onBottom()">置底</a>
+      <a :class="{ disabled: !props.node && !props.nodes }" @click="onBottom()"
+        >置底</a
+      >
     </div>
     <div class="line"></div>
     <div v-if="props.nodes">
@@ -17,14 +21,17 @@
       <a @click="onUncombine()">取消组合/包含</a>
     </div>
     <div>
-      <a
-        :class="{disabled:!props.node && !props.nodes}"
-        @click="onLock()"
-      >{{ props.locked ? '解锁' : '锁定' }}</a>
+      <a :class="{ disabled: !props.node && !props.nodes }" @click="onLock()">{{
+        props.locked ? '解锁' : '锁定'
+      }}</a>
     </div>
     <div class="line"></div>
     <div>
-      <a :class="{disabled:!props.node && !props.nodes && !props.line}" @click="onDel()">删除</a>
+      <a
+        :class="{ disabled: !props.node && !props.nodes && !props.line }"
+        @click="onDel()"
+        >删除</a
+      >
     </div>
     <div class="line"></div>
     <div>
@@ -60,14 +67,18 @@
     </div>
     <div class="line"></div>
     <div>
-      <a :class="{disabled:!props.node || !props.node.image}" @click="onCopyImage()" class="flex">
+      <a
+        :class="{ disabled: !props.node || !props.node.image }"
+        @click="onCopyImage()"
+        class="flex"
+      >
         <span class="full">复制节点图片地址</span>
       </a>
     </div>
   </div>
 </template>
 
-<script >
+<script>
 export default {
   data() {
     return {}

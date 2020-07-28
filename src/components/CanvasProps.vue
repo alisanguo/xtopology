@@ -4,17 +4,33 @@
     <div v-if="!props.node && !props.line && !props.multi">
       <div class="title">欢迎使用le5le-topology！</div>
       <div class="group">
-        <a class="star" href="https://github.com/le5le-com/topology" target="_blank">喜欢，点击这里打个star吧</a>
-        <a href="https://www.yuque.com/alsmile/topology" target="_blank">使用教程</a>
+        <a
+          class="star"
+          href="https://github.com/le5le-com/topology"
+          target="_blank"
+          >喜欢，点击这里打个star吧</a
+        >
+        <a href="https://www.yuque.com/alsmile/topology" target="_blank"
+          >使用教程</a
+        >
         <br />
         <a
           href="http://topology.le5le.com/assets/img/topology_wechat.jpg?t=1"
           target="_blank"
-        >微信交流群（大群）</a>
+          >微信交流群（大群）</a
+        >
         <br />
-        <a href="http://topology.le5le.com/assets/img/topology_wechat2.jpg" target="_blank">微信交流群2</a>
+        <a
+          href="http://topology.le5le.com/assets/img/topology_wechat2.jpg"
+          target="_blank"
+          >微信交流群2</a
+        >
         <br />
-        <a href="https://www.yuque.com/alsmile/topology/faq#EVbCgt" target="_blank">联系我们</a>
+        <a
+          href="https://www.yuque.com/alsmile/topology/faq#EVbCgt"
+          target="_blank"
+          >联系我们</a
+        >
       </div>
       <div class="title">[Todo] 未来规划</div>
       <ul class="group">
@@ -174,7 +190,15 @@
       <div class="title"></div>
       <div class="items">
         <div class="flex grid">
-          <div class="custom-data">自定义数据 <i :class="props.expand ? 'el-icon-zoom-out' : 'el-icon-zoom-in'" @click="changeExpand" size='small'>{{props.expand ? '缩小' : '放大'}}</i></div>
+          <div class="custom-data">
+            自定义数据
+            <i
+              :class="props.expand ? 'el-icon-zoom-out' : 'el-icon-zoom-in'"
+              @click="changeExpand"
+              size="small"
+              >{{ props.expand ? '缩小' : '放大' }}</i
+            >
+          </div>
         </div>
         <div class="flex grid">
           <div :class="props.expand ? 'expand-data' : ''">
@@ -191,7 +215,7 @@
   </div>
 </template>
 
-<script >
+<script>
 export default {
   data() {
     return {
@@ -208,28 +232,35 @@ export default {
   },
   updated() {
     if (!this.props.node || this.nodeId === this.props.node.id) {
-      return;
+      return
     }
-    this.props.expand = false;
-    this.nodeId = this.props.node.id;
-    let originData = this.props.node.data;
-    this.nodeIsJson = this.isJson(originData);
-    this.nodeData = this.nodeIsJson ?
-      JSON.stringify(originData, null, 4) :
-      this.nodeData = originData;
+    this.props.expand = false
+    this.nodeId = this.props.node.id
+    let originData = this.props.node.data
+    this.nodeIsJson = this.isJson(originData)
+    this.nodeData = this.nodeIsJson
+      ? JSON.stringify(originData, null, 4)
+      : (this.nodeData = originData)
   },
   methods: {
     onChange(value) {
       if (this.props.node) {
-        this.props.node.data = this.nodeIsJson ? JSON.parse(this.nodeData) : this.nodeData;
+        this.props.node.data = this.nodeIsJson
+          ? JSON.parse(this.nodeData)
+          : this.nodeData
       }
-      this.$emit('change', this.props.node);
+      this.$emit('change', this.props.node)
     },
     changeExpand() {
-      this.props.expand = !this.props.expand;
+      this.props.expand = !this.props.expand
     },
-    isJson (obj) {
-      return typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;
+    isJson(obj) {
+      return (
+        typeof obj == 'object' &&
+        Object.prototype.toString.call(obj).toLowerCase() ==
+          '[object object]' &&
+        !obj.length
+      )
     }
   }
 }

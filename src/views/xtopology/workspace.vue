@@ -16,12 +16,19 @@
         </div>
       </div>
     </div>
-    <div id="topology-canvas" class="full" @contextmenu="onContextMenu($event)"></div>
+    <div
+      id="topology-canvas"
+      class="full"
+      @contextmenu="onContextMenu($event)"
+    ></div>
     <div class="props" :style="props.expand ? 'overflow: visible' : ''">
       <CanvasProps :props.sync="props" @change="onUpdateProps"></CanvasProps>
     </div>
     <div class="context-menu" v-if="contextmenu.left" :style="this.contextmenu">
-      <CanvasContextMenu :canvas="canvas" :props.sync="props"></CanvasContextMenu>
+      <CanvasContextMenu
+        :canvas="canvas"
+        :props.sync="props"
+      ></CanvasContextMenu>
     </div>
   </div>
 </template>
@@ -31,7 +38,6 @@ import { Topology, curveLen } from 'topology-core'
 import { Node } from 'topology-core/models/node'
 import { Line } from 'topology-core/models/line'
 import * as FileSaver from 'file-saver'
-
 
 import { Tools, canvasRegister } from '@/utils/canvas'
 
@@ -86,9 +92,9 @@ export default {
   created() {
     if (process.client && window['echartsData']) {
       for (let key in window['echartsData']) {
-        document.body.removeChild(window['echartsData'][key]).div;
+        document.body.removeChild(window['echartsData'][key]).div
       }
-      window['echartsData'] = {};
+      window['echartsData'] = {}
     }
     canvasRegister()
     if (process.client) {
@@ -109,7 +115,6 @@ export default {
   methods: {
     async open() {
       this.canvas.open(Data)
-
     },
 
     onDrag(event, node) {
@@ -281,7 +286,7 @@ export default {
         this.canvas.canvas.width + 200,
         this.canvas.canvas.height + 200
       )
-      console.log(ctx) 
+      console.log(ctx)
       for (const item of this.canvas.data.nodes) {
         item.render(ctx)
       }
@@ -365,8 +370,8 @@ export default {
       }
     }
   },
-  destroyed () {
-    this.canvas.destroy();
+  destroyed() {
+    this.canvas.destroy()
   }
 }
 </script>

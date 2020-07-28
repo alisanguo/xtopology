@@ -1,4 +1,4 @@
-import { registerNode } from 'topology-core/middles'
+import { registerNode } from '@topology/core'
 import {
   flowData,
   flowDataAnchors,
@@ -36,7 +36,7 @@ import {
   flowParallelAnchors,
   flowComment,
   flowCommentAnchors
-} from 'topology-flow-diagram'
+} from '@topology/flow-diagram'
 
 import {
   activityFinal,
@@ -53,7 +53,7 @@ import {
   forkIconRect,
   forkTextRect,
   forkVAnchors
-} from 'topology-activity-diagram'
+} from '@topology/activity-diagram'
 import {
   simpleClass,
   simpleClassIconRect,
@@ -61,7 +61,7 @@ import {
   interfaceClass,
   interfaceClassIconRect,
   interfaceClassTextRect
-} from 'topology-class-diagram'
+} from '@topology/class-diagram'
 import {
   lifeline,
   lifelineAnchors,
@@ -71,10 +71,10 @@ import {
   sequenceFocusAnchors,
   sequenceFocusIconRect,
   sequenceFocusTextRect
-} from 'topology-sequence-diagram'
+} from '@topology/sequence-diagram'
 // echarts
-import { register as registerChart } from 'topology-chart-diagram'
-import { loadJS } from 'topology-core/utils/dom'
+import { register as registerChart } from '@topology/chart-diagram'
+//import { loadJS } from '@topology/core/utils/dom'
 
 export function canvasRegister() {
   registerNode(

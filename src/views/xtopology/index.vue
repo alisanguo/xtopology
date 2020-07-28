@@ -31,10 +31,14 @@
           <template slot="title">社区</template>
           <el-menu-item index="about">咨询与建议</el-menu-item>
           <el-menu-item>
-            <a href="https://github.com/le5le-com" target="_blank">开源Github</a>
+            <a href="https://github.com/le5le-com" target="_blank"
+              >开源Github</a
+            >
           </el-menu-item>
           <el-menu-item>
-            <a href="https://www.yuque.com/alsmile/topology" target="_blank">开发文档</a>
+            <a href="https://www.yuque.com/alsmile/topology" target="_blank"
+              >开发文档</a
+            >
           </el-menu-item>
         </el-submenu>
         <el-submenu index="help">
@@ -47,9 +51,13 @@
           <el-menu-item index="about2">关于</el-menu-item>
         </el-submenu>
       </el-menu>
-      <el-menu mode="horizontal" class="full" background-color="#f8f8f8"></el-menu>
+      <el-menu
+        mode="horizontal"
+        class="full"
+        background-color="#f8f8f8"
+      ></el-menu>
       <el-menu mode="horizontal" background-color="#f8f8f8">
-        <el-menu-item>视图：{{scale}}%</el-menu-item>
+        <el-menu-item>视图：{{ scale }}%</el-menu-item>
         <el-submenu index="state" title="默认连线类型">
           <template slot="title">
             <i :class="`iconfont icon-${lineName}`"></i>
@@ -101,7 +109,7 @@
               src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
               :size="24"
             ></el-avatar>
-            {{user.username}}
+            {{ user.username }}
           </template>
           <el-menu-item @click="onSignOut">退出</el-menu-item>
         </el-submenu>
@@ -119,12 +127,16 @@
     <el-dialog title="关于我们" :visible.sync="about" width="30%">
       <div>
         本项目是
-        <a href="http://topology.le5le.com" target="_blank">le5le topology</a>的react版本！
+        <a href="http://topology.le5le.com" target="_blank">le5le topology</a
+        >的react版本！
       </div>
       <p>欢迎有任何问题或建议请联系：</p>
       <p>微信：alsmile123</p>
       <div class="text-center">
-        <img src="http://topology.le5le.com/assets/img/topology_wechat.jpg?t=1" width="200" />
+        <img
+          src="http://topology.le5le.com/assets/img/topology_wechat.jpg?t=1"
+          width="200"
+        />
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="about = false">确定</el-button>
@@ -148,7 +160,11 @@
       <li class="{styles.item}">个人云服务器资源有限，在线用户将有限：</li>
       <div class="text-center mt10">
         <div class="gray">赏五毛</div>
-        <img class="mt5" src="http://topology.le5le.com/assets/img/wechatPay.png" width="120" />
+        <img
+          class="mt5"
+          src="http://topology.le5le.com/assets/img/wechatPay.png"
+          width="120"
+        />
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button type="primary" @click="joinin = false">确定</el-button>
@@ -157,7 +173,7 @@
   </div>
 </template>
 
-<script >
+<script>
 import '@/assets/css/base.scss'
 
 export default {
